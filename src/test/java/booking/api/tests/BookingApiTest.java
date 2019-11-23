@@ -17,7 +17,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
 @Slf4j
-public class BookingApiTests {
+public class BookingApiTest {
 
     private Retrofit retrofit;
 
@@ -114,7 +114,7 @@ public class BookingApiTests {
                 "Additional needs does not match!");
     }
 
-    @Test
+    @Test()
     public void deletionOfBookingTest() {
         int randomBookingElementId = RandomHelper.getRandomBookingId(bookingService.getBookingsIdList());
         assert bookingService.deleteBooking(randomBookingElementId);
