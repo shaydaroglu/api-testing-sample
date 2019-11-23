@@ -8,14 +8,14 @@ Java project for api test automation made by Sercan Haydaroglu.
 - OkHttp and Retrofit2
 - Common api interaction methods
 
-#Requirements
+# Requirements
 In order to utilise this project you need to have the following installed locally:
   
       Maven 3
       Java 1.8
       Lombok Plugin
       
-#Install & Run Tests
+# Install & Run Tests
 
 - Build the project
 - Run command 
