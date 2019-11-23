@@ -1,0 +1,46 @@
+package booking.utils.interceptors;
+
+import okhttp3.*;
+import java.io.IOException;
+
+public class AuthInterceptor implements Interceptor {
+
+    private String authToken;
+    private String basicAuth;
+
+    private static final String API_URL = "https://restful-booker.herokuapp.com/";
+
+    public AuthInterceptor(String username, String password) throws IOException{
+        RequestBody formBody = new FormBody.Builder()
+                .add("username", username)
+                .add("password", password)
+                .build();
+        Request authRequest = new Request.Builder()
+                .url(API_URL + "auth")
+                .post(formBody)
+                .build();
+        OkHttpClient client = new OkHttpClient();
+        Call call = client.newCall(authRequest);
+        Response res = call.execute();
+        assert res.code() == 200;
+
+        this.basicAuth = Credentials.basic(username, password);
+        this.authToken = res.body() != null ? res.body().string()
+                .replace("{","")
+                .replace(" ","")
+                .replace("\"", "")
+                .replace("}","") : null;
+    }
+
+    @Override
+    public Response intercept(Chain chain) throws IOException {
+        Request request = chain.request();
+        CacheControl cacheControl;
+        Request authenticatedRequest = request.newBuilder()
+                .header("Cookie", authToken)
+                .addHeader("Authorization", basicAuth).build();
+        return chain.proceed(authenticatedRequest);
+    }
+
+}
+
