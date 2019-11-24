@@ -12,6 +12,10 @@ public class ClientInitializer {
     private static final String password = "password123";
     private static final String API_URL = "https://restful-booker.herokuapp.com/";
 
+    /**
+     * Initializing Retrofit as a REST Client of project with the OkHttp Authenticating Interceptor.
+     * @return Retrofit client.
+     */
     @SneakyThrows
     public static Retrofit setupRetrofit() {
         OkHttpClient okHttpClient = new OkHttpClient().newBuilder()

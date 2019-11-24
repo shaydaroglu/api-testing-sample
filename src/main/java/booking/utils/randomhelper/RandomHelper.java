@@ -12,6 +12,11 @@ public class RandomHelper {
         return random.nextInt((max - min) + 1) + min;
     }
 
+    /**
+     * Randomizer for getting random booking id.
+     * @param bookingIdList List of current bookings' id.
+     * @return int value of booking id.
+     */
     public static int getRandomBookingId(List<BookingIdDTO> bookingIdList) {
         return bookingIdList.get(getRandomNumberBetween(0, bookingIdList.size())).getBookingId();
     }

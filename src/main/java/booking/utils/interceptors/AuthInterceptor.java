@@ -10,6 +10,14 @@ public class AuthInterceptor implements Interceptor {
 
     private static final String API_URL = "https://restful-booker.herokuapp.com/";
 
+    /**
+     * Interceptor for authentication process.
+     * PS: For update and delete request auth token alone does not work
+     * Basic authentication have been added later as extra.
+     * @param username Username for the /auth endpoint and basic auth.
+     * @param password Password for the /auth endpoint and basic auth.
+     * @throws IOException
+     */
     public AuthInterceptor(String username, String password) throws IOException{
         RequestBody formBody = new FormBody.Builder()
                 .add("username", username)
