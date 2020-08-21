@@ -21,7 +21,7 @@
         <fasterxml.version>2.9.10</fasterxml.version>
         <testng.version>7.0.0</testng.version>
         <hamcrest.version>1.3</hamcrest.version>
-        <lombok.version>1.18.10</lombok.version>
+        <lombok.version>1.18.12</lombok.version>
         <slf4j.version>1.6.1</slf4j.version>
         <maven-compiler.version>3.8.1</maven-compiler.version>
         <surefire.version>3.0.0-M4</surefire.version>
