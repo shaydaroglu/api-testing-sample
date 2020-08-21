@@ -1,7 +1,7 @@
-package booking.api.dataproviders;
+package test.java.booking.api.dataproviders;
 
-import booking.api.dtos.booking.BookingDTO;
-import booking.api.dtos.booking.BookingDatesDTO;
+import main.java.booking.api.dtos.booking.BookingDTO;
+import main.java.booking.api.dtos.booking.BookingDatesDTO;
 import org.testng.annotations.DataProvider;
 
 public class BookingDetails {

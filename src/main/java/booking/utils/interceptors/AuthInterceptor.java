@@ -1,4 +1,4 @@
-package booking.utils.interceptors;
+package main.java.booking.utils.interceptors;
 
 import okhttp3.*;
 import java.io.IOException;

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Booking Api" parallel="methods" thread-count="2">
+<suite name="Booking Api" parallel="methods" thread-count="8">
     <test name="Booking Api Tests">
         <classes>
-            <class name="booking.api.tests.BookingApiTest"/>
+            <class name="test.java.booking.api.tests.BookingApiTest"/>
         </classes>
     </test>
 </suite>

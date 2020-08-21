@@ -1,6 +1,6 @@
-package booking.utils.randomhelper;
+package main.java.booking.utils.randomhelper;
 
-import booking.api.dtos.booking.BookingIdDTO;
+import main.java.booking.api.dtos.booking.BookingIdDTO;
 
 import java.util.List;
 import java.util.Random;

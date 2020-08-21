@@ -1,6 +1,6 @@
-package booking.utils;
+package main.java.booking.utils;
 
-import booking.utils.interceptors.AuthInterceptor;
+import main.java.booking.utils.interceptors.AuthInterceptor;
 import lombok.SneakyThrows;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

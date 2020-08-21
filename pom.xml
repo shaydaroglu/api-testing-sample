@@ -28,6 +28,7 @@
     </properties>
 
     <build>
+        <sourceDirectory>src</sourceDirectory>
         <resources>
             <resource>
                 <directory>src.main.java.resources</directory>
@@ -41,7 +42,7 @@
                 <version>${surefire.version}</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <file>src/test/resources/booking_api_tests.xml</file>
+                        <suiteXmlFile>src/test/resources/booking_api_tests.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
@@ -92,6 +93,7 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>

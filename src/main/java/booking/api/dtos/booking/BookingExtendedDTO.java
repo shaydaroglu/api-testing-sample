@@ -1,4 +1,4 @@
-package booking.api.dtos.booking;
+package main.java.booking.api.dtos.booking;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;

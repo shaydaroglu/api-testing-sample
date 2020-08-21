@@ -1,4 +1,4 @@
-package booking.api.dtos.user;
+package main.java.booking.api.dtos.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

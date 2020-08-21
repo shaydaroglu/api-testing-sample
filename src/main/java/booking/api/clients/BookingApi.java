@@ -1,9 +1,9 @@
 package booking.api.clients;
 
 
-import booking.api.dtos.booking.BookingDTO;
-import booking.api.dtos.booking.BookingIdDTO;
-import booking.api.dtos.booking.BookingExtendedDTO;
+import main.java.booking.api.dtos.booking.BookingDTO;
+import main.java.booking.api.dtos.booking.BookingIdDTO;
+import main.java.booking.api.dtos.booking.BookingExtendedDTO;
 import retrofit2.Call;
 import retrofit2.http.*;
 

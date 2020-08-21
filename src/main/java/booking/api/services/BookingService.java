@@ -1,9 +1,9 @@
-package booking.api.services;
+package main.java.booking.api.services;
 
 import booking.api.clients.BookingApi;
-import booking.api.dtos.booking.BookingDTO;
-import booking.api.dtos.booking.BookingIdDTO;
-import booking.api.dtos.booking.BookingExtendedDTO;
+import main.java.booking.api.dtos.booking.BookingDTO;
+import main.java.booking.api.dtos.booking.BookingIdDTO;
+import main.java.booking.api.dtos.booking.BookingExtendedDTO;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import retrofit2.Response;
