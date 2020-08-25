@@ -3,8 +3,8 @@
 
 <suite name="Booking Api" parallel="methods" thread-count="8">
     <test name="Booking Api Tests">
-        <classes>
-            <class name="test.java.booking.api.tests.BookingApiTest"/>
-        </classes>
+        <packages>
+            <package name="test.java.booking.api.tests"/>
+        </packages>
     </test>
 </suite>
