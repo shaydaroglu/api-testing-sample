@@ -1,16 +1,16 @@
 package test.java.booking.api.tests;
 
 import booking.api.clients.BookingApi;
-import test.java.booking.api.dataproviders.BookingDetails;
+import lombok.extern.slf4j.Slf4j;
 import main.java.booking.api.dtos.booking.BookingDTO;
 import main.java.booking.api.dtos.booking.BookingDatesDTO;
 import main.java.booking.api.dtos.booking.BookingExtendedDTO;
 import main.java.booking.api.services.BookingService;
 import main.java.booking.utils.randomhelper.RandomHelper;
-import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import retrofit2.Retrofit;
+import test.java.booking.api.dataproviders.BookingDetails;
 
 import static main.java.booking.utils.ClientInitializer.setupRetrofit;
 import static org.testng.Assert.assertEquals;
