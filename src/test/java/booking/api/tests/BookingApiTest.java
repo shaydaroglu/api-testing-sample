@@ -1,36 +1,24 @@
 package test.java.booking.api.tests;
 
-import booking.api.clients.BookingApi;
 import lombok.extern.slf4j.Slf4j;
 import main.java.booking.api.dtos.booking.BookingDTO;
 import main.java.booking.api.dtos.booking.BookingDatesDTO;
 import main.java.booking.api.dtos.booking.BookingExtendedDTO;
 import main.java.booking.api.services.BookingService;
 import main.java.booking.utils.randomhelper.RandomHelper;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import retrofit2.Retrofit;
+import test.java.booking.api.BaseTest;
 import test.java.booking.api.dataproviders.BookingDetails;
 
-import static main.java.booking.utils.ClientInitializer.setupRetrofit;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
 @Slf4j
-public class BookingApiTest {
-
-    private Retrofit retrofit;
-
-    private BookingService bookingService;
-
-    @BeforeClass
-    public void setupConfiguration() {
-        retrofit = setupRetrofit();
-        this.bookingService = new BookingService(retrofit.create(BookingApi.class));
-    }
+public class BookingApiTest extends BaseTest {
 
     @Test(dataProvider = "bookingDetailProvider", dataProviderClass = BookingDetails.class)
     public void createNewBookingTest(BookingDTO bookingDTO) {
+        BookingService bookingService = new BookingService(retrofit.create(booking.api.clients.BookingApi.class));
         BookingExtendedDTO bookingResponse = bookingService.createBooking(bookingDTO);
 
         log.info("Comparing the response with the sent request.");
@@ -57,6 +45,7 @@ public class BookingApiTest {
 
     @Test(dataProvider = "bookingDetailProvider", dataProviderClass = BookingDetails.class)
     public void amendmentsOfCreatedBookingTest(BookingDTO bookingDTO) {
+        BookingService bookingService = new BookingService(retrofit.create(booking.api.clients.BookingApi.class));
         int randomBookingElementId = RandomHelper.getRandomBookingId(bookingService.getBookingsIdList());
         BookingExtendedDTO extendedDTO = new BookingExtendedDTO(bookingDTO);
         extendedDTO.setBookingId(randomBookingElementId);
@@ -85,6 +74,7 @@ public class BookingApiTest {
 
     @Test()
     public void getBookingTest() {
+        BookingService bookingService = new BookingService(retrofit.create(booking.api.clients.BookingApi.class));
         BookingDTO bookingToCreate = new BookingDTO("Quality",
                 "Assurance", 250, false,
                 new BookingDatesDTO("2019-11-23", "2019-12-15"),
@@ -116,6 +106,7 @@ public class BookingApiTest {
 
     @Test()
     public void deletionOfBookingTest() {
+        BookingService bookingService = new BookingService(retrofit.create(booking.api.clients.BookingApi.class));
         int randomBookingElementId = RandomHelper.getRandomBookingId(bookingService.getBookingsIdList());
         assert bookingService.deleteBooking(randomBookingElementId);
 

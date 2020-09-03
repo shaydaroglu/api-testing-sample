@@ -3,12 +3,12 @@ package main.java.booking.utils.interceptors;
 import okhttp3.*;
 import java.io.IOException;
 
+import static main.java.booking.utils.ConfigReader.getConfig;
+
 public class AuthInterceptor implements Interceptor {
 
     private String authToken;
     private String basicAuth;
-
-    private static final String API_URL = "https://restful-booker.herokuapp.com/";
 
     /**
      * Interceptor for authentication process.
@@ -24,7 +24,7 @@ public class AuthInterceptor implements Interceptor {
                 .add("password", password)
                 .build();
         Request authRequest = new Request.Builder()
-                .url(API_URL + "auth")
+                .url(getConfig("TARGET_API_URL") + "auth")
                 .post(formBody)
                 .build();
         OkHttpClient client = new OkHttpClient();

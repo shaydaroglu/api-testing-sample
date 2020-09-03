@@ -6,11 +6,9 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
-public class ClientInitializer {
+import static main.java.booking.utils.ConfigReader.getConfig;
 
-    private static final String username = "admin";
-    private static final String password = "password123";
-    private static final String API_URL = "https://restful-booker.herokuapp.com/";
+public class ClientInitializer {
 
     /**
      * Initializing Retrofit as a REST Client of project with the OkHttp Authenticating Interceptor.
@@ -19,10 +17,10 @@ public class ClientInitializer {
     @SneakyThrows
     public static Retrofit setupRetrofit() {
         OkHttpClient okHttpClient = new OkHttpClient().newBuilder()
-                .addInterceptor(new AuthInterceptor(username, password))
+                .addInterceptor(new AuthInterceptor(getConfig("username"), getConfig("password")))
                 .build();
         return new Retrofit.Builder()
-                .baseUrl(API_URL)
+                .baseUrl(getConfig("TARGET_API_URL"))
                 .client(okHttpClient)
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();

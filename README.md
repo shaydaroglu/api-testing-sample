@@ -1,5 +1,5 @@
-# restful-booker-api-tests
-Java project for api test automation made by Sercan Haydaroglu.
+# api-testing-sample
+Sample API test automation framework with Java made by Sercan Haydaroglu.
 
 # Concepts & Tools included
 - Parallel Test Runs 
@@ -19,5 +19,4 @@ In order to utilise this project you need to have the following installed locall
 
 - Build the project
 - Run command 
-
-        mvn surefire:test
+        "mvn surefire:test"
