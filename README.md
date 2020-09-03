@@ -14,7 +14,19 @@ In order to utilise this project you need to have the following installed locall
       Maven 3
       Java 1.8
       Lombok Plugin
-      
+ 
+And please do not forget to enable annotation processing with the IDE.
+In case of IntelliJ does not suggests to enabling annotation processing: 
+ - open /.idea/compiler.xml file.
+ - Insert following config inside \<component\> node
+    
+    ```    
+   <annotationProcessing>
+       <profile default="true" name="Default" enabled="true" />
+   </annotationProcessing>
+   ```
+ 
+
 # Install & Run Tests
 
 - Build the project
