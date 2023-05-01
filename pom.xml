@@ -19,7 +19,7 @@
         <jackson.version>2.6.4</jackson.version>
         <retrofit.version>2.6.2</retrofit.version>
         <fasterxml.version>2.9.10</fasterxml.version>
-        <testng.version>7.0.0</testng.version>
+        <testng.version>7.7.0</testng.version>
         <hamcrest.version>1.3</hamcrest.version>
         <lombok.version>1.18.12</lombok.version>
         <slf4j.version>1.6.1</slf4j.version>
